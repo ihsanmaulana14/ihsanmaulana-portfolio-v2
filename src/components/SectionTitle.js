@@ -11,7 +11,9 @@ const SectionTitleStyle = styled.div`
     font-family: 'Montserrat Bold';
     font-size: 6rem;
     margin-top: 0.5rem;
+    margin-bottom: 3rem;
     text-transform: uppercase;
+    color: var(--font-color-1);
   }
   @media only screen and (max-width: 768px) {
     text-align: center;

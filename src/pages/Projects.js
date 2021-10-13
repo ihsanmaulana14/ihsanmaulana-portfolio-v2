@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { MdSearch } from 'react-icons/md';
+import { Link } from 'react-router-dom';
 import SectionTitle from '../components/SectionTitle';
 import ProjectsInfo from '../assets/data/projects';
 import ProjectItem from '../components/ProjectItem';
+import Button from '../components/Button';
 
 const ProjectStyle = styled.div`
   padding: 10rem 0;
@@ -12,6 +14,11 @@ const ProjectStyle = styled.div`
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 5rem;
     margin-top: 5rem;
+
+    .btn__link {
+      width: auto;
+      height: auto;
+    }
   }
   .projects__searchBar {
     position: relative;
@@ -35,6 +42,36 @@ const ProjectStyle = styled.div`
   }
   .projects__searchBar .searchIcon path {
     color: var(--deep-dark);
+  }
+  .projectItem__img {
+    width: 100%;
+    height: 400px;
+    border-radius: 12px;
+    overflow: hidden;
+    display: inline-block;
+    border: 3px solid var(--gray-2);
+    img {
+      height: 100%;
+    }
+  }
+  .projectItem__info {
+    margin-top: 1rem;
+    background-color: var(--deep-dark);
+    padding: 1rem;
+    border-radius: 12px;
+  }
+  .projectItem__title {
+    font-size: 2.2rem;
+  }
+  .projectItem__desc {
+    font-size: 1.6rem;
+    font-family: 'RobotoMono Regular';
+    margin-top: 1rem;
+  }
+  @media only screen and (max-width: 768px) {
+    .projectItem__img {
+      height: 350px;
+    }
   }
   @media only screen and (max-width: 768px) {
     .projects__searchBar,
@@ -84,12 +121,33 @@ export default function Projects() {
           </div>
           <div className="projects__allItems">
             {projectsData.map((item) => (
-              <ProjectItem
-                key={item.id}
-                title={item.name}
-                desc={item.desc}
-                img={item.img}
-              />
+              <>
+                {/* <ProjectItem
+                  key={item.id}
+                  title={item.name}
+                  desc={item.desc}
+                  img={item.img}
+                /> */}
+                <div className="project__item">
+                  <Link to="/projects" className="projectItem__img">
+                    <img src={item.img} alt="project img" />
+                  </Link>
+                  <div className="projectItem__info">
+                    <Link to="#">
+                      <h3 className="projectItem__title">{item.name}</h3>
+                    </Link>
+                    <p className="projectItem__desc">{item.desc}</p>
+                  </div>
+                  <Button
+                    className="btn__link"
+                    btnText="See live"
+                    btnLink={item.projectLink}
+                    alt="linkproject"
+                    target="_blank"
+                    rel="noreferrer"
+                  />
+                </div>
+              </>
             ))}
           </div>
         </div>

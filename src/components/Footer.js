@@ -57,11 +57,12 @@ export default function Footer() {
     <FooterStyle>
       <div className="container">
         <div className="footer__col1">
-          <h1 className="footer__col1__title">Ayan Khan</h1>
+          <h1 className="footer__col1__title">Ihsan Maulana</h1>
           <PText>
-            A freelance web designer and developer from Chittagong, Bangladesh.
-            I always make websites that have unique designs and also has a good
-            performance rate.
+            passion for responsive website design and a firm believer in the
+            mobilefirst approach. freecodecamp certified. Implemented a new
+            responsive website approach which increased mobile, and the ability
+            to work with teams.
           </PText>
         </div>
         <div className="footer__col2">
@@ -96,16 +97,17 @@ export default function Footer() {
             heading="Contact Info"
             links={[
               {
-                title: '+88012312',
-                path: 'tel:+88012312',
+                title: '+62 81318590716',
+                path: 'https://wa.me/6281318590716',
               },
               {
-                title: 'webcifar@gmail.com',
-                path: 'mailto:webcifar@gmail.com',
+                title: 'imaul7853@gmail.com',
+                path: 'mailto:imaul7853@gmail.com',
               },
               {
-                title: 'GEC Circle, Chittagong, Bangladesh',
-                path: 'http://google.com/maps',
+                title: 'Bekasi City, West Java, Indonesia',
+                path:
+                  'https://www.google.com/maps/place/Bantargebang,+Kota+Bks,+Jawa+Barat/@-6.3361305,106.9571087,13z/data=!3m1!4b1!4m5!3m4!1s0x2e6993cd1cfd5131:0xbc41a51ae9cf5e0e!8m2!3d-6.3396406!4d106.9889904',
               },
             ]}
           />
@@ -115,12 +117,12 @@ export default function Footer() {
             heading="social Links"
             links={[
               {
-                title: 'Facebook',
-                path: 'http://facebook.com',
+                title: 'Github',
+                path: 'https://github.com/ihsanmaulana14',
               },
               {
-                title: 'Twitter',
-                path: 'http://twitter.com',
+                title: 'Linkedin',
+                path: 'https://www.linkedin.com/in/ihsanmaulana14/',
               },
               {
                 title: 'Instagram',
@@ -132,12 +134,7 @@ export default function Footer() {
       </div>
       <div className="copyright">
         <div className="container">
-          <PText>
-            © 2021 - Ayan Khan | Designed By{' '}
-            <a target="_blank" rel="noreferrer" href="http://webcifar.com">
-              web cifar
-            </a>{' '}
-          </PText>
+          <PText>© 2021 - Ihsan Maulana</PText>
         </div>
       </div>
     </FooterStyle>
