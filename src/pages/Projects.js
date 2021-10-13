@@ -4,7 +4,7 @@ import { MdSearch } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 import SectionTitle from '../components/SectionTitle';
 import ProjectsInfo from '../assets/data/projects';
-import ProjectItem from '../components/ProjectItem';
+// import ProjectItem from '../components/ProjectItem';
 import Button from '../components/Button';
 
 const ProjectStyle = styled.div`
