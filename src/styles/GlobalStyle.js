@@ -31,6 +31,7 @@ const GlobalStyles = createGlobalStyle`
   }
   a{
     text-decoration: none;
+    color: var(--font-color-1);
   }
   img, svg{
     width: 100%;

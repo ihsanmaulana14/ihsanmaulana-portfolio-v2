@@ -21,6 +21,7 @@ const NavStyles = styled.nav`
   .logo {
     width: 40px;
     height: 40px;
+    margin-top: 0.85rem;
   }
   ul {
     max-width: 1200px;
@@ -81,6 +82,11 @@ const NavStyles = styled.nav`
     }
     .mobile-menu-icon {
       display: block;
+    }
+    .logo {
+      width: 30px;
+      height: 30px;
+      margin-top: 0.85rem;
     }
     .navItems {
       --top: 1rem;

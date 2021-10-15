@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 // import { FaLinkedin, FaInstagram, FaGithub, FaWhatsapp } from 'react-icons/fa';
+import { motion } from 'framer-motion';
 import HeroImg from '../assets/images/ihsan-photo-2.png';
 import Button from './Button';
 // import SocialMediaArrow from '../assets/images/social-media-arrow.svg';
@@ -38,6 +39,13 @@ const HeroStyles = styled.div`
           font-size: 7rem;
         }
         color: var(--font-color-1);
+      }
+      .hero-section__btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        margin-top: 2rem;
       }
     }
     .hero__img {
@@ -185,21 +193,58 @@ const HeroStyles = styled.div`
 `;
 
 export default function HeroSection() {
+  const fadeLeft = {
+    hidden: { opacity: 0, x: -100 },
+    visible: { opacity: 1, x: 0 },
+  };
+  const fadeTop = {
+    hidden: { opacity: 0, y: -100 },
+    visible: { opacity: 1, y: 0 },
+  };
   return (
     <HeroStyles>
       <div className="hero">
         <div className="container">
           {/* Hero IMG */}
           <div className="content">
-            <div className="hero__img">
+            <motion.div
+              className="hero__img"
+              variants={fadeTop}
+              initial="hidden"
+              animate="visible"
+              transition={{ duration: 1.1 }}
+            >
               <img src={HeroImg} alt="" />
-            </div>
+            </motion.div>
             {/* Hero HEADING */}
-            <h1 className="hero__heading">
-              <span>Hello, I'am</span>
-              <span className="hero__name">Ihsan Maulana</span>
-              <Button btnText="see my works" btnLink="/projects" />
-            </h1>
+            <motion.h1
+              className="hero__heading"
+              variants={fadeLeft}
+              initial="hidden"
+              animate="visible"
+              transition={{ duration: 1 }}
+            >
+              <motion.span
+                variants={fadeLeft}
+                initial="hidden"
+                animate="visible"
+                transition={{ duration: 1.1 }}
+              >
+                Hello, I'am
+              </motion.span>
+              <motion.span
+                className="hero__name"
+                variants={fadeLeft}
+                initial="hidden"
+                animate="visible"
+                transition={{ duration: 1.2 }}
+              >
+                Ihsan Maulana
+              </motion.span>
+              <div className="hero-section__btn">
+                <Button btnText="see my works" btnLink="/projects" />
+              </div>
+            </motion.h1>
           </div>
 
           {/* Hero SCROLL DOWN */}

@@ -1,11 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 import { FaLinkedin, FaInstagram, FaGithub, FaWhatsapp } from 'react-icons/fa';
+import { motion } from 'framer-motion';
 import Button from './Button';
 import PText from './PText';
 import SectionTitle from './SectionTitle';
 import AboutImg from '../assets/images/ihsan-photo-2.png';
-import SocialMediaArrow from '../assets/images/social-media-arrow.svg';
+
+// import SocialMediaArrow from '../assets/images/social-media-arrow.svg';
 
 const AboutSectionStyles = styled.div`
   padding: 10rem 0;
@@ -14,7 +16,7 @@ const AboutSectionStyles = styled.div`
     align-items: center;
     justify-content: flex-start;
     text-align: left;
-    gap: 3rem;
+    gap: 1.5rem;
   }
   .aboutSection__left,
   .aboutSection__right {
@@ -36,7 +38,6 @@ const AboutSectionStyles = styled.div`
     text-align: center;
   }
   .para {
-    margin-top: 2rem;
     margin-left: 0;
     text-align: justify;
   }
@@ -52,14 +53,11 @@ const AboutSectionStyles = styled.div`
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    position: absolute;
-
-    bottom: 20px;
-    width: 50px;
+    position: relative;
+    order: -2;
   }
   .hero__social {
     left: 0px;
-    top: 150%;
   }
   .hero__scrollDown {
     right: 0px;
@@ -93,13 +91,16 @@ const AboutSectionStyles = styled.div`
     justify-content: center;
     ul {
       li {
-        margin-bottom: 1rem;
+        margin: 1rem 0 1rem 0;
         a {
           display: inline-block;
           font-size: 2.6rem;
-          /* transform: rotate(-90deg); */
           letter-spacing: 5px;
-          margin-bottom: 2rem;
+          transition: transform 0.2s;
+
+          &:hover {
+            transform: scale(1.2);
+          }
         }
       }
     }
@@ -138,8 +139,9 @@ const AboutSectionStyles = styled.div`
       margin-top: 2rem;
     }
     .aboutSection__buttons {
-      flex-direction: column;
-      gap: 0rem;
+      flex-direction: row;
+      gap: 3rem;
+      justify-content: center;
       .button-wrapper,
       a {
         width: 100%;
@@ -147,11 +149,10 @@ const AboutSectionStyles = styled.div`
       }
     }
     .hero__social {
+      width: 100%;
       left: 0px;
-      top: 160%;
-      /* width: 20px; */
+      order: -1;
       .hero__social__indicator {
-        /* width: 20px; */
         p {
           font-size: 1.4rem;
         }
@@ -161,10 +162,11 @@ const AboutSectionStyles = styled.div`
       }
       .hero__social__text {
         ul {
+          display: flex;
+          gap: 2rem;
           li {
+            margin: 0 1rem 0 1rem;
             a {
-              /* font-size: 1.4rem; */
-              margin-bottom: 1rem;
             }
           }
         }
@@ -174,72 +176,113 @@ const AboutSectionStyles = styled.div`
 `;
 
 export default function AboutSection() {
+  const fadeLeft = {
+    hidden: { opacity: 0, x: -100 },
+    visible: { opacity: 1, x: 0 },
+  };
+  const fadeTop = {
+    hidden: { opacity: 0, y: -100 },
+    visible: { opacity: 1, y: 0 },
+  };
+  const fadeBottom = {
+    hidden: { opacity: 0, y: 100 },
+    visible: { opacity: 1, y: 0 },
+  };
+  const fadeRight = {
+    hidden: { opacity: 0, x: 100 },
+    visible: { opacity: 1, x: 0 },
+  };
   return (
     <AboutSectionStyles>
       <SectionTitle subheading="Let me introduce myself" heading="About Me" />
       <div className="container">
         <div className="aboutSection__left">
-          <PText>
-            passion for responsive website design and a firm believer in the
-            mobilefirst approach. freecodecamp certified. Implemented a new
-            responsive website approach which increased mobile, and the ability
-            to work with teams.
-          </PText>
-          <div className="aboutSection__buttons">
+          <motion.div
+            variants={fadeRight}
+            initial="hidden"
+            animate="visible"
+            transition={{ duration: 1 }}
+          >
+            <PText>
+              passion for responsive website design and a firm believer in the
+              mobilefirst approach. freecodecamp certified. Implemented a new
+              responsive website approach which increased mobile, and the
+              ability to work with teams.
+            </PText>
+          </motion.div>
+          <motion.div
+            className="aboutSection__buttons"
+            variants={fadeBottom}
+            initial="hidden"
+            animate="visible"
+            transition={{ duration: 1 }}
+          >
             <Button btnText="Works" btnLink="/projects" />
             <Button btnText="Read More" btnLink="/about" outline />
-          </div>
+          </motion.div>
         </div>
-        <div className="aboutSection__right">
+        <motion.div
+          className="aboutSection__right"
+          variants={fadeTop}
+          initial="hidden"
+          animate="visible"
+          transition={{ duration: 1 }}
+        >
           <img className="aboutImg" src={AboutImg} alt="Img" />
-        </div>
-      </div>
-      {/* Hero SOCIAL */}
-      <div className="hero__social">
-        <div className="hero__social__indicator">
-          <p>Social</p>
-          <img src={SocialMediaArrow} alt="icon" />
-        </div>
-        <div className="hero__social__text">
-          <ul>
-            <li>
-              <a
-                href="https://github.com/ihsanmaulana14"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <FaGithub />
-              </a>
-            </li>
-            <li>
-              <a
-                href="http://isntagram.com/san.m_tech"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <FaInstagram />
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.linkedin.com/in/ihsanmaulana14/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <FaLinkedin />
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://wa.me/6281318590716"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <FaWhatsapp />
-              </a>
-            </li>
-          </ul>
-        </div>
+        </motion.div>
+        {/* Hero SOCIAL */}
+        <motion.div
+          className="hero__social"
+          variants={fadeLeft}
+          initial="hidden"
+          animate="visible"
+          transition={{ duration: 1.1 }}
+        >
+          {/* <div className="hero__social__indicator">
+            <p>Social</p>
+            <img src={SocialMediaArrow} alt="icon" />
+          </div> */}
+          <div className="hero__social__text">
+            <ul>
+              <li>
+                <a
+                  href="https://github.com/ihsanmaulana14"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <FaGithub />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="http://isntagram.com/san.m_tech"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <FaInstagram />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/ihsanmaulana14/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <FaLinkedin />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://wa.me/6281318590716"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <FaWhatsapp />
+                </a>
+              </li>
+            </ul>
+          </div>
+        </motion.div>
       </div>
     </AboutSectionStyles>
   );

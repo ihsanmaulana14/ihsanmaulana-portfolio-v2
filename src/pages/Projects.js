@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import SectionTitle from '../components/SectionTitle';
 import ProjectsInfo from '../assets/data/projects';
 // import ProjectItem from '../components/ProjectItem';
-import Button from '../components/Button';
+// import Button from '../components/Button';
 
 const ProjectStyle = styled.div`
   padding: 10rem 0;
@@ -18,6 +18,24 @@ const ProjectStyle = styled.div`
     .btn__link {
       width: auto;
       height: auto;
+      margin-top: 2rem;
+
+      display: inline-block;
+      font-family: 'RobotoMono Regular';
+      padding: 1rem 2rem;
+      font-size: 1.4rem;
+      color: #16bb92;
+      outline: none;
+      border-radius: 10px;
+      box-shadow: var(--outer-shadow);
+      transition: all 0.3s ease;
+
+      &:hover {
+        color: var(--gary-1);
+        /* background: linear-gradient(45deg, #16bb92, #1f7c91); */
+        box-shadow: var(--inner-shadow);
+        transition: all 0.4s ease;
+      }
     }
   }
   .projects__searchBar {
@@ -80,6 +98,11 @@ const ProjectStyle = styled.div`
       width: 100%;
     }
   }
+  @media only screen and (min-width: 768px) {
+    .btn__link {
+      font-size: 2rem;
+    }
+  }
 `;
 
 export default function Projects() {
@@ -138,14 +161,15 @@ export default function Projects() {
                     </Link>
                     <p className="projectItem__desc">{item.desc}</p>
                   </div>
-                  <Button
+                  <a
                     className="btn__link"
-                    btnText="See live"
-                    btnLink={item.projectLink}
+                    href={item.projectLink}
                     alt="linkproject"
                     target="_blank"
                     rel="noreferrer"
-                  />
+                  >
+                    See Live
+                  </a>
                 </div>
               </>
             ))}

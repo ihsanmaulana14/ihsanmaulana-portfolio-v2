@@ -1,9 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 import PText from '../components/PText';
 import Button from '../components/Button';
 import AboutImg from '../assets/images/ihsan-photo-2.png';
 import AboutInfoItem from '../components/AboutInfoItem';
+// import { motion } from 'framer-motion';
 // import ContactBanner from '../components/ContactBanner';
 
 const AboutPageStyles = styled.div`
@@ -21,9 +23,8 @@ const AboutPageStyles = styled.div`
   .right {
     flex: 2;
     padding: 2rem;
-    box-shadow: var(--inner-shadow);
-    /* box-shadow: var(--inner-shadow); */
     border-radius: 0 50px 0;
+    order: -1;
   }
   .about__subheading {
     font-size: 2.2rem;
@@ -51,6 +52,7 @@ const AboutPageStyles = styled.div`
       box-shadow: var(--outer-shadow);
       border-radius: 0 50px 0;
       transition: all 0.4s ease;
+      max-width: 400px;
 
       &:hover {
         box-shadow: var(--inner-shadow);
@@ -75,6 +77,10 @@ const AboutPageStyles = styled.div`
     a {
       font-family: 'Montserrat SemiBold';
       margin-left: 1rem;
+
+      &:hover {
+        transform: translateY(5px);
+      }
     }
   }
   @media only screen and (max-width: 768px) {
@@ -99,16 +105,40 @@ const AboutPageStyles = styled.div`
 `;
 
 export default function About() {
+  const fadeLeft = {
+    hidden: { opacity: 0, x: -100 },
+    visible: { opacity: 1, x: 0 },
+  };
   return (
     <>
       <AboutPageStyles>
         <div className="container">
           <div className="top-section">
-            <div className="left">
-              <p className="about__subheading">
+            <motion.div
+              className="left"
+              variants={fadeLeft}
+              initial="hidden"
+              animate="visible"
+              transition={{ duration: 1.6 }}
+            >
+              <motion.p
+                className="about__subheading"
+                variants={fadeLeft}
+                initial="hidden"
+                animate="visible"
+                transition={{ duration: 1.2 }}
+              >
                 Hi, I am <span>Ihsan Maulana</span>
-              </p>
-              <h2 className="about__heading">A front-end developer</h2>
+              </motion.p>
+              <motion.h2
+                className="about__heading"
+                variants={fadeLeft}
+                initial="hidden"
+                animate="visible"
+                transition={{ duration: 1.4 }}
+              >
+                A front-end developer
+              </motion.h2>
               <div className="about__info">
                 <PText>
                   I am Ihsan Maulana, a graduate of Computer and Network
@@ -120,10 +150,16 @@ export default function About() {
                 </PText>
               </div>
               <Button btnText="See CV" btnLink="/Cv" />
-            </div>
-            <div className="right">
+            </motion.div>
+            <motion.div
+              className="right"
+              variants={fadeLeft}
+              initial="hidden"
+              animate="visible"
+              transition={{ duration: 0.8 }}
+            >
               <img src={AboutImg} alt="me" />
-            </div>
+            </motion.div>
           </div>
           <div className="about__info__items">
             <div className="about__info__item">

@@ -42,6 +42,8 @@ const AboutItemStyles = styled.div`
         padding: 1rem;
         border-radius: 8px;
 
+        }
+
         .item-detail {
           font-size: 1.4rem;
           margin-top: 1rem;
