@@ -1,11 +1,11 @@
 const testimonials = [
   {
     id: 1,
-    name: 'Shaif Arfan',
-    title: 'CEO',
-    org: 'WEB CIFAR',
+    name: 'Zainudin Abdullah',
+    title: 'Web Programer',
+    org: 'PT. Sentra Vidya Utama',
     desc:
-      'Ayan is a person of commitment. He is really good at what he is doing. I really like his work. Especially the unique point of view of designing.',
+      'Ihsan Maulana, very good at learning new things and fast-growing, not afraid of new things, and can be trusted in working on projects',
   },
   {
     id: 2,

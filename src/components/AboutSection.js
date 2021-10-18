@@ -255,20 +255,20 @@ export default function AboutSection() {
               </li>
               <li>
                 <a
-                  href="http://isntagram.com/san.m_tech"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <FaInstagram />
-                </a>
-              </li>
-              <li>
-                <a
                   href="https://www.linkedin.com/in/ihsanmaulana14/"
                   target="_blank"
                   rel="noreferrer"
                 >
                   <FaLinkedin />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="http://isntagram.com/san.m_tech"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <FaInstagram />
                 </a>
               </li>
               <li>

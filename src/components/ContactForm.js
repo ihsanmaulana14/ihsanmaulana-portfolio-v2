@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
+import emailjs from 'emailjs-com';
 import styled from 'styled-components';
+// eslint-disable-next-line import/no-extraneous-dependencies
 
 const FormStyle = styled.form`
   width: 100%;
@@ -40,12 +42,35 @@ const FormStyle = styled.form`
 `;
 
 export default function ContactForm() {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
+  // const [name, setName] = useState('');
+  // const [email, setEmail] = useState('');
+  // const [message, setMessage] = useState('');
+  // const [subject, setSubject] = useState('');
+  // const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        'service_pwv0zyi',
+        'template_9vbtots',
+        e.target,
+        'user_mgAcTWNUVqQhFbrvFDllL'
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+    e.target.reset();
+  };
   return (
     <>
-      <FormStyle>
+      <FormStyle onSubmit={sendEmail}>
         <div className="form-group">
           <label htmlFor="name">
             Your Name
@@ -53,8 +78,8 @@ export default function ContactForm() {
               type="text"
               id="name"
               name="name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
+              // value={name}
+              // onChange={(e) => setName(e.target.value)}
             />
           </label>
         </div>
@@ -65,8 +90,20 @@ export default function ContactForm() {
               type="email"
               id="email"
               name="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              // value={email}
+              // onChange={(e) => setEmail(e.target.value)}
+            />
+          </label>
+        </div>
+        <div className="form-group">
+          <label htmlFor="subject">
+            Your subject
+            <input
+              type="subject"
+              id="subject"
+              name="subject"
+              // value={subject}
+              // onChange={(e) => setSubject(e.target.value)}
             />
           </label>
         </div>
@@ -77,12 +114,14 @@ export default function ContactForm() {
               type="text"
               id="message"
               name="message"
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
+              // value={message}
+              // onChange={(e) => setMessage(e.target.value)}
             />
           </label>
         </div>
-        <button type="submit">Send</button>
+        <button type="submit" value="send">
+          Send
+        </button>
       </FormStyle>
     </>
   );
