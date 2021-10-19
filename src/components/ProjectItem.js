@@ -11,23 +11,26 @@ const ProjectItemStyles = styled.div`
     border-radius: 12px;
     overflow: hidden;
     display: inline-block;
-    border: 3px solid var(--gray-2);
+    border: 3px solid var(--white-alpha-40);
     img {
       height: 100%;
     }
   }
   .projectItem__info {
     margin-top: 1rem;
-    background-color: var(--deep-dark);
+    /* background-color: var(--deep-dark); */
     padding: 1rem;
     border-radius: 12px;
+    background-color: var(--white-alpha-25);
+    border: 1.5px solid var(--white-alpha-40);
+    -webkit-backdrop-filter: var(--backdrop-filter-blur);
+    backdrop-filter: var(--backdrop-filter-blur);
   }
   .projectItem__title {
     font-size: 2.2rem;
   }
   .projectItem__desc {
     font-size: 1.6rem;
-    font-family: 'RobotoMono Regular';
     margin-top: 1rem;
   }
   @media only screen and (max-width: 768px) {

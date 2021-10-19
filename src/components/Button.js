@@ -5,28 +5,8 @@ import { motion } from 'framer-motion';
 
 const ButtonStyle = styled(motion.button)`
   margin-top: 2rem;
-  /* font-size: 2.2rem;
-    padding: 0.7em 2em;
-    border-radius: 8px;
-    display: inline-block;
-    color: #16bb92;
-    transition: all 0.4s ease;
-    box-shadow: var(--outer-shadow); */
-  /* padding: 10px 25px;
-    font-size: 2.2rem;
-    font-weight: 500;
-    color: #16bb92;
-    background-color: transparent;
-    line-height: 1.5;
-    cursor: pointer;
-    border-radius: 30px;
-    display: inline-block;
-    border: none;
-    box-shadow: var(--outer-shadow);
-    transition: all 0.3s ease; */
   background-color: transparent;
   display: inline-block;
-  font-family: 'RobotoMono Regular';
   padding: 1rem 2rem;
   font-size: 2rem;
   color: #16bb92;

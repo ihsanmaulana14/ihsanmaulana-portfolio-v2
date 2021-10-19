@@ -18,13 +18,40 @@ const GlobalStyles = createGlobalStyle`
     --yt-spec-brand-background-primary: rgba(33, 33, 33, 0.98);
     --yt-spec-10-percent-layer: rgba(255, 255, 255, 0.1);
     /* shadow */
-    --outer-shadow: 3px 3px 3px #222327, -3px -3px 3px #363636;
-    --inner-shadow: inset 3px 3px 3px #222327, inset -3px -3px 3px #363636;
+    --outer-shadow-dark: 3px 3px 3px #222327, -3px -3px 3px #363636;
+    --inner-sd-dark: inset 3px 3px 3px #222327, inset -3px -3px 3px #363636;
+    --outer-sd-dark-2: 3px 3px 3px #5f6064,-3px -3px 3px #a5a5a5;
+    --inner-sd-dark-2: inset 3px 3px 3px #5f6064, inset -3px -3px 3px #a5a5a5;
+
+    /* GLASS PHORISM */
+    --main-color: #e02f6b;
+    --blue: #0000ff;
+    --blue-dark: #18293c;
+    --blue-light: #627285;
+    --orange: #ffa500;
+    --green-yellow: #cddc39;
+    --pink-light: #efa2b4;
+    --cyan-light: #aef1ee;
+    --white: #ffffff;
+    --white-alpha-40: rgba(255, 255, 255, 0.40);
+    --white-alpha-25: rgba(255, 255, 255, 0.25);
+    --backdrop-filter-blur: blur(5px);
+    /* shadow */
+    --outer-shadow: 3px 3px 3px #b1afaf,-3px -3px 3px #ffffff80;
+    --inner-shadow: inset 3px 3px 3px #b1afaf,inset -3px -3px 3px #ffffff80;
   }
   html{
     font-size: 10px;
     font-family: 'Roboto Mono';
-    background-color: var(--dark-bg-2);
+    /* background-color: var(--dark-bg-2); */
+  }
+  body{
+    /* background-color: var(---font-color-1); */
+    min-height: 100vh;
+    background-image: linear-gradient(to bottom right, var(--pink-light),var(--cyan-light));
+    color: var(--blue-dark);
+    line-height: 1.5;
+    overflow-x: hidden;
   }
   ul,li{
     list-style: none;
@@ -50,6 +77,28 @@ const GlobalStyles = createGlobalStyle`
     max-width: 1200px;
     width: 90%;
     margin: 0 auto;
+  }
+  .flex{
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+    @media only screen and (max-width: 768px) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  .glass{
+    background-color: var(--white-alpha-25);
+    border: 1.5px solid var(--white-alpha-40);
+    backdrop-filter: var(--backdrop-filter-blur);
+    border-radius: 20px;
+  }
+  .blur{
+    backdrop-filter: var(--backdrop-filter-blur);
+  }
+  .content {
+    display: flex;
+    padding: 2rem;
   }
 /* Smooth Scroll  */
   [data-scrollbar] {

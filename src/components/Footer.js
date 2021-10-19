@@ -4,7 +4,8 @@ import FooterCol from './FooterCol';
 import PText from './PText';
 
 const FooterStyle = styled.div`
-  background-color: var(--deep-dark);
+  background-color: var(--white-alpha-25);
+  backdrop-filter: var(--backdrop-filter-blur);
   padding-top: 10rem;
   .container {
     display: flex;
@@ -23,7 +24,8 @@ const FooterStyle = styled.div`
     margin-bottom: 1rem;
   }
   .copyright {
-    background-color: var(--dark-bg);
+    background-color: var(--white-alpha-25);
+    backdrop-filter: var(--backdrop-filter-blur);
     text-align: left;
     padding: 1rem 0;
     margin-top: 5rem;

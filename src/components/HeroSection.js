@@ -13,72 +13,70 @@ const HeroStyles = styled.div`
     height: 100vh;
     /* min-height: 1000px; */
     width: 100%;
-    text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
+    /* text-align: center; */
   }
-  .content {
+
+  .hero__heading {
     display: flex;
-    .hero__heading {
-      display: flex;
-      flex-direction: column;
-      align-self: center;
-      justify-content: center;
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      position: relative;
-      span {
-        display: inline-block;
-        width: 100%;
-      }
-      .hero__name {
-        font-family: 'Montserrat SemiBold';
-        @media screen and (min-width: 768px) {
-          font-size: 7rem;
-        }
-        color: var(--font-color-1);
-      }
-      .hero-section__btn {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 2rem;
-        margin-top: 2rem;
-      }
-    }
-    .hero__img {
+    flex-direction: column;
+    align-self: center;
+    justify-content: center;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    position: relative;
+    span {
+      display: inline-block;
       width: 100%;
-      height: auto;
-      margin: 1rem auto;
-      padding: 2rem;
-      /* border: 2px solid var(--yt-spec-10-percent-layer); */
-      border-radius: 50%;
-      box-shadow: var(--inner-shadow);
-
-      @media screen and (min-width: 768px) {
-        max-width: 400px;
-        height: auto;
-        order: 1;
-      }
-      img {
-        border-radius: 50%;
-        padding: 1rem;
-        box-shadow: var(--outer-shadow);
-        transition: all 0.4s ease;
-
-        &:hover {
-          cursor: pointer;
-          box-shadow: var(--inner-shadow);
-          /* border: 2px solid var(--yt-spec-10-percent-layer); */
-        }
-      }
     }
-    .hero__info {
-      margin-top: 1rem;
+    .hero__name {
+      @media screen and (min-width: 768px) {
+        font-size: 7rem;
+      }
+      color: var(--font-color-1);
+    }
+    .hero-section__btn {
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      gap: 2rem;
+      margin-top: 2rem;
     }
   }
+  .hero__img {
+    width: 100%;
+    height: 100%;
+    margin: 1rem auto;
+    padding: 2rem;
+    /* border: 2px solid var(--yt-spec-10-percent-layer); */
+    border-radius: 50%;
+    box-shadow: var(--inner-shadow);
+
+    @media screen and (min-width: 768px) {
+      max-width: 400px;
+      height: 100%;
+      order: 1;
+    }
+    img {
+      border-radius: 50%;
+      padding: 1rem;
+      box-shadow: var(--outer-shadow);
+      transition: all 0.4s ease;
+
+      &:hover {
+        cursor: pointer;
+        box-shadow: var(--inner-shadow);
+        /* border: 2px solid var(--yt-spec-10-percent-layer); */
+      }
+    }
+  }
+  .hero__info {
+    margin-top: 1rem;
+  }
+
   .hero__social,
   .hero__scrollDown {
     display: flex;
@@ -136,20 +134,23 @@ const HeroStyles = styled.div`
   @media only screen and (max-width: 768px) {
     .hero {
       min-height: 750px;
+      text-align: center;
     }
     .content {
       flex-direction: column;
     }
     .hero__heading {
       font-size: 1.4rem;
-      margin-bottom: -3rem;
       .hero__name {
         font-size: 4.5rem;
       }
+      .hero-section__btn {
+        justify-content: center;
+      }
     }
     .hero__img {
-      height: auto;
-      max-width: 340px;
+      height: 100%;
+      max-width: 240px;
       width: 300px;
       order: -1;
     }
@@ -206,45 +207,47 @@ export default function HeroSection() {
       <div className="hero">
         <div className="container">
           {/* Hero IMG */}
-          <div className="content">
-            <motion.div
-              className="hero__img"
-              variants={fadeTop}
-              initial="hidden"
-              animate="visible"
-              transition={{ duration: 1.1 }}
-            >
-              <img src={HeroImg} alt="" />
-            </motion.div>
-            {/* Hero HEADING */}
-            <motion.h1
-              className="hero__heading"
-              variants={fadeLeft}
-              initial="hidden"
-              animate="visible"
-              transition={{ duration: 1 }}
-            >
-              <motion.span
-                variants={fadeLeft}
+          <div className="glass">
+            <div className="content">
+              <motion.div
+                className="hero__img"
+                variants={fadeTop}
                 initial="hidden"
                 animate="visible"
                 transition={{ duration: 1.1 }}
               >
-                Hello, I'am
-              </motion.span>
-              <motion.span
-                className="hero__name"
+                <img src={HeroImg} alt="" />
+              </motion.div>
+              {/* Hero HEADING */}
+              <motion.h1
+                className="hero__heading"
                 variants={fadeLeft}
                 initial="hidden"
                 animate="visible"
-                transition={{ duration: 1.2 }}
+                transition={{ duration: 1 }}
               >
-                Ihsan Maulana
-              </motion.span>
-              <div className="hero-section__btn">
-                <Button btnText="see my works" btnLink="/projects" />
-              </div>
-            </motion.h1>
+                <motion.span
+                  variants={fadeLeft}
+                  initial="hidden"
+                  animate="visible"
+                  transition={{ duration: 1.1 }}
+                >
+                  Hello, I'am
+                </motion.span>
+                <motion.span
+                  className="hero__name"
+                  variants={fadeLeft}
+                  initial="hidden"
+                  animate="visible"
+                  transition={{ duration: 1.2 }}
+                >
+                  Ihsan Maulana
+                </motion.span>
+                <div className="hero-section__btn">
+                  <Button btnText="see my works" btnLink="/projects" />
+                </div>
+              </motion.h1>
+            </div>
           </div>
 
           {/* Hero SCROLL DOWN */}

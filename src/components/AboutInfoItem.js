@@ -20,9 +20,15 @@ const AboutItemStyles = styled.div`
     left: 18rem;
   }
   .item {
-    background-color: var(--deep-dark);
+    /* background-color: var(--deep-dark); */
     padding: 1rem;
     border-radius: 8px;
+
+    /* glass */
+    background-color: var(--white-alpha-25);
+    border: 1.5px solid var(--white-alpha-40);
+    -webkit-backdrop-filter: var(--backdrop-filter-blur);
+    backdrop-filter: var(--backdrop-filter-blur);
 
     .item-detail {
       font-size: 1.4rem;
@@ -38,22 +44,19 @@ const AboutItemStyles = styled.div`
       position: initial;
       gap: 1rem;
       .item {
-        background-color: var(--deep-dark);
         padding: 1rem;
         border-radius: 8px;
+      }
 
-        }
-
-        .item-detail {
-          font-size: 1.4rem;
-          margin-top: 1rem;
-          text-align: justify;
-        }
+      .item-detail {
+        font-size: 1.4rem;
+        margin-top: 1rem;
+        text-align: justify;
       }
     }
-    .title {
-      font-size: 2rem;
-    }
+  }
+  .title {
+    font-size: 2rem;
   }
 `;
 
@@ -68,11 +71,13 @@ export default function AboutInfoItem({
       <h1 className="title">{title}</h1>
       <div className="items">
         {items.map((item, index) => (
-          <div className="item" key={index}>
-            <PText>{item}</PText>
-            <p className="item-detail">{itemDetail}</p>
-            <p className="item-detail">{itemDetail2}</p>
-          </div>
+          <>
+            <div className="item" key={index}>
+              <PText>{item}</PText>
+              <p className="item-detail">{itemDetail}</p>
+              <p className="item-detail">{itemDetail2}</p>
+            </div>
+          </>
         ))}
       </div>
     </AboutItemStyles>

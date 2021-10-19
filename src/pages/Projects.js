@@ -21,12 +21,13 @@ const ProjectStyle = styled.div`
       margin-top: 2rem;
 
       display: inline-block;
-      font-family: 'RobotoMono Regular';
       padding: 1rem 2rem;
       font-size: 1.4rem;
       color: #16bb92;
       outline: none;
       border-radius: 10px;
+      background-color: var(--white-alpha-25);
+
       box-shadow: var(--outer-shadow);
       transition: all 0.3s ease;
 
@@ -67,14 +68,14 @@ const ProjectStyle = styled.div`
     border-radius: 12px;
     overflow: hidden;
     display: inline-block;
-    border: 3px solid var(--gray-2);
+    border: 3px solid var(--white-alpha-40);
     img {
       height: 100%;
     }
   }
   .projectItem__info {
     margin-top: 1rem;
-    background-color: var(--deep-dark);
+    background-color: var(--white-alpha-25);
     padding: 1rem;
     border-radius: 12px;
   }
@@ -83,7 +84,6 @@ const ProjectStyle = styled.div`
   }
   .projectItem__desc {
     font-size: 1.6rem;
-    font-family: 'RobotoMono Regular';
     margin-top: 1rem;
   }
   @media only screen and (max-width: 768px) {
@@ -145,18 +145,12 @@ export default function Projects() {
           <div className="projects__allItems">
             {projectsData.map((item) => (
               <>
-                {/* <ProjectItem
-                  key={item.id}
-                  title={item.name}
-                  desc={item.desc}
-                  img={item.img}
-                /> */}
                 <div className="project__item">
-                  <Link to="/projects" className="projectItem__img">
+                  <Link to="#" className="projectItem__img">
                     <img src={item.img} alt="project img" />
                   </Link>
                   <div className="projectItem__info">
-                    <Link to="#">
+                    <Link to="#" target="_blank" rel="noreferrer">
                       <h3 className="projectItem__title">{item.name}</h3>
                     </Link>
                     <p className="projectItem__desc">{item.desc}</p>

@@ -2,7 +2,7 @@
 
 ## Live Preview: [Open Link][preview]
 
-![](./ReadMeImages/ReadMeBanner.png)
+<!-- ![](./ReadMeImages/ReadMeBanner.png) -->
 
 ## Project Details
 
@@ -32,4 +32,4 @@ This website is made for educational purposes. Also, this will be free to use. T
 
 # If you like the tutorial, please share this with others.
 
-[preview]: https://ayans-portfolio.netlify.app/
+[preview]: https://ihsanmaulana-portfolio.netlify.app/

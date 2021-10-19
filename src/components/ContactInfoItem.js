@@ -5,7 +5,9 @@ import PText from './PText';
 
 const ItemStyles = styled.div`
   padding: 2rem;
-  background-color: var(--deep-dark);
+  background-color: var(--white-alpha-25);
+  backdrop-filter: var(--backdrop-filter-blur);
+  border: 1.5px solid var(--white-alpha-40);
   display: flex;
   align-items: center;
   gap: 2rem;
@@ -13,7 +15,9 @@ const ItemStyles = styled.div`
   margin-bottom: 2rem;
   .icon {
     color: var(--white);
-    background-color: var(--gray-2);
+    background-color: var(--white-alpha-25);
+    backdrop-filter: var(--backdrop-filter-blur);
+    border: 1.5px solid var(--white-alpha-40);
     padding: 1.3rem;
     display: flex;
     align-items: center;

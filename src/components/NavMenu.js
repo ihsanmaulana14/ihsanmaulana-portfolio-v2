@@ -11,7 +11,10 @@ const NavStyles = styled.nav`
   left: 0;
   width: 100%;
   padding: 1rem 0;
-  background: var(--dark-bg-2);
+  /* background: var(--dark-bg-2); */
+  background-color: var(--white-alpha-25);
+  border: 1.5px solid var(--white-alpha-40);
+  /* backdrop-filter: var(--backdrop-filter-blur); */
 
   .__header {
     display: flex;
@@ -38,10 +41,9 @@ const NavStyles = styled.nav`
     }
     a {
       display: inline-block;
-      font-family: 'RobotoMono Regular';
       padding: 1rem 2rem;
       font-size: 2rem;
-      color: var(--gray-1);
+      color: var(--blue-light);
       outline: none;
       border-radius: 10px;
 
@@ -89,12 +91,18 @@ const NavStyles = styled.nav`
       margin-top: 0.85rem;
     }
     .navItems {
+      border: 2.5px solid var(--white-alpha-40);
       --top: 1rem;
       transition: 0.3s ease transform;
-      background-color: var(--dark-bg-2);
+      background-color: var(--white-alpha-25);
+      /* background-image: linear-gradient(
+        to bottom right,
+        var(--pink-light),
+        var(--cyan-light)
+      ); */
       padding: 2rem;
       width: 100%;
-      height: 98vh;
+      height: 90vh;
       border-radius: 10px;
       position: absolute;
       right: 0;
@@ -115,12 +123,25 @@ const NavStyles = styled.nav`
       li {
         display: block;
         margin-bottom: 1rem;
+        transition: all 0.4s ease;
         a {
+          /* background-image: linear-gradient(
+            to bottom right,
+            var(--pink-light),
+            var(--cyan-light)
+          ); */
+          background-color: var(--white-alpha-40);
           box-shadow: var(--outer-shadow);
+          transition: all 0.4s ease;
           &:hover {
             color: gray;
-            background-color: #22232763;
-            box-shadow: none;
+            /* background-color: #22232763; */
+            transition: all 0.4s ease;
+            box-shadow: var(--inner-shadow);
+          }
+          .active {
+            color: var(--font-color-1);
+            box-shadow: var(--inner-shadow);
           }
         }
       }
@@ -140,7 +161,7 @@ const NavStyles = styled.nav`
 export default function NavMenu() {
   const [showNav, setShowNav] = useState(false);
   return (
-    <NavStyles>
+    <NavStyles className={!showNav ? 'blur' : ''}>
       <div className="container-l">
         <div className="__header">
           <div className="logo">
@@ -156,7 +177,7 @@ export default function NavMenu() {
             <MdMenu />
           </div>
 
-          <ul className={!showNav ? 'navItems hide-item' : 'navItems'}>
+          <ul className={!showNav ? 'navItems hide-item' : 'navItems blur'}>
             <div
               className="closeNavIcon"
               onClick={() => setShowNav(!showNav)}
@@ -211,7 +232,7 @@ export default function NavMenu() {
                 Contact
               </NavLink>
             </li>
-            <p className="copyright">© 2021 Ihsan Maulana</p>
+            <p className="copyright">© 2021 - Ihsan Maulana</p>
           </ul>
         </div>
       </div>

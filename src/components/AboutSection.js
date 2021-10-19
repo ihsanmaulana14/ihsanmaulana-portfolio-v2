@@ -11,6 +11,9 @@ import AboutImg from '../assets/images/ihsan-photo-2.png';
 
 const AboutSectionStyles = styled.div`
   padding: 10rem 0;
+  .glass {
+    margin: 0 5rem 0 5rem;
+  }
   .container {
     display: flex;
     align-items: center;
@@ -47,6 +50,7 @@ const AboutSectionStyles = styled.div`
     justify-content: flex-start;
     gap: 2rem;
     margin-top: 2rem;
+    margin-bottom: 2rem;
   }
   .hero__social,
   .hero__scrollDown {
@@ -114,6 +118,9 @@ const AboutSectionStyles = styled.div`
     }
   }
   @media only screen and (max-width: 768px) {
+    .glass {
+      margin: 0 2rem 0 2rem;
+    }
     .container {
       flex-direction: column;
       text-align: center;
@@ -195,94 +202,96 @@ export default function AboutSection() {
   return (
     <AboutSectionStyles>
       <SectionTitle subheading="Let me introduce myself" heading="About Me" />
-      <div className="container">
-        <div className="aboutSection__left">
+      <div className="glass">
+        <div className="container">
+          <div className="aboutSection__left">
+            <motion.div
+              variants={fadeRight}
+              initial="hidden"
+              animate="visible"
+              transition={{ duration: 1 }}
+            >
+              <PText>
+                passion for responsive website design and a firm believer in the
+                mobilefirst approach. freecodecamp certified. Implemented a new
+                responsive website approach which increased mobile, and the
+                ability to work with teams.
+              </PText>
+            </motion.div>
+            <motion.div
+              className="aboutSection__buttons"
+              variants={fadeBottom}
+              initial="hidden"
+              animate="visible"
+              transition={{ duration: 1 }}
+            >
+              <Button btnText="Project" btnLink="/projects" />
+              <Button btnText="Read More" btnLink="/about" outline />
+            </motion.div>
+          </div>
           <motion.div
-            variants={fadeRight}
+            className="aboutSection__right"
+            variants={fadeTop}
             initial="hidden"
             animate="visible"
             transition={{ duration: 1 }}
           >
-            <PText>
-              passion for responsive website design and a firm believer in the
-              mobilefirst approach. freecodecamp certified. Implemented a new
-              responsive website approach which increased mobile, and the
-              ability to work with teams.
-            </PText>
+            <img className="aboutImg" src={AboutImg} alt="Img" />
           </motion.div>
+          {/* Hero SOCIAL */}
           <motion.div
-            className="aboutSection__buttons"
-            variants={fadeBottom}
+            className="hero__social"
+            variants={fadeLeft}
             initial="hidden"
             animate="visible"
-            transition={{ duration: 1 }}
+            transition={{ duration: 1.1 }}
           >
-            <Button btnText="Works" btnLink="/projects" />
-            <Button btnText="Read More" btnLink="/about" outline />
-          </motion.div>
-        </div>
-        <motion.div
-          className="aboutSection__right"
-          variants={fadeTop}
-          initial="hidden"
-          animate="visible"
-          transition={{ duration: 1 }}
-        >
-          <img className="aboutImg" src={AboutImg} alt="Img" />
-        </motion.div>
-        {/* Hero SOCIAL */}
-        <motion.div
-          className="hero__social"
-          variants={fadeLeft}
-          initial="hidden"
-          animate="visible"
-          transition={{ duration: 1.1 }}
-        >
-          {/* <div className="hero__social__indicator">
+            {/* <div className="hero__social__indicator">
             <p>Social</p>
             <img src={SocialMediaArrow} alt="icon" />
           </div> */}
-          <div className="hero__social__text">
-            <ul>
-              <li>
-                <a
-                  href="https://github.com/ihsanmaulana14"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <FaGithub />
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://www.linkedin.com/in/ihsanmaulana14/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <FaLinkedin />
-                </a>
-              </li>
-              <li>
-                <a
-                  href="http://isntagram.com/san.m_tech"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <FaInstagram />
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://wa.me/6281318590716"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <FaWhatsapp />
-                </a>
-              </li>
-            </ul>
-          </div>
-        </motion.div>
+            <div className="hero__social__text">
+              <ul>
+                <li>
+                  <a
+                    href="https://github.com/ihsanmaulana14"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <FaGithub />
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.linkedin.com/in/ihsanmaulana14/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <FaLinkedin />
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="http://isntagram.com/san.m_tech"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <FaInstagram />
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://wa.me/6281318590716"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <FaWhatsapp />
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </motion.div>
+        </div>
       </div>
     </AboutSectionStyles>
   );

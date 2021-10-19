@@ -19,9 +19,14 @@ const TestimonialSectionStyles = styled.div`
     width: 100%;
     height: fit-content;
     padding: 3rem;
-    background-color: var(--deep-dark);
+    /* background-color: var(--deep-dark); */
     border-radius: 12px;
     margin-top: 5rem;
+    /* glass */
+    background-color: var(--white-alpha-25);
+    border: 1.5px solid var(--white-alpha-40);
+    -webkit-backdrop-filter: var(--backdrop-filter-blur);
+    backdrop-filter: var(--backdrop-filter-blur);
   }
   .testimonial__desc {
     .para {
@@ -30,7 +35,6 @@ const TestimonialSectionStyles = styled.div`
   }
   .testimonial__name {
     margin-top: 4rem;
-    font-family: 'Montserrat Bold';
     font-size: 2.2rem;
   }
   .testimonial__title {
@@ -50,10 +54,15 @@ const TestimonialSectionStyles = styled.div`
     .prev {
       margin: 0 0.5rem;
       width: fit-content;
-      background-color: var(--deep-dark);
+      /* background-color: var(--deep-dark); */
       padding: 0.5rem 2rem;
       border-radius: 8px;
       cursor: pointer;
+      /* glass */
+      background-color: var(--white-alpha-25);
+      border: 1.5px solid var(--white-alpha-40);
+      -webkit-backdrop-filter: var(--backdrop-filter-blur);
+      backdrop-filter: var(--backdrop-filter-blur);
     }
   }
   .fade-enter {

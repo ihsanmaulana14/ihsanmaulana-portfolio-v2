@@ -17,7 +17,8 @@ const MapStyles = styled.div`
     right: 10%;
     bottom: 10%;
     padding: 2rem;
-    background: var(--deep-dark);
+    background: var(--white-alpha-40);
+    backdrop-filter: var(--backdrop-filter-blur);
     width: 100%;
     max-width: 300px;
     border-radius: 12px;

@@ -6,10 +6,15 @@ import PText from './PText';
 const ContactBannerStyles = styled.div`
   padding: 5rem 0;
   .contactBanner__wrapper {
-    background-color: var(--deep-dark);
+    /* background-color: var(--deep-dark); */
     border-radius: 12px;
     padding: 5rem 0rem;
     text-align: center;
+    /* glass */
+    background-color: var(--white-alpha-25);
+    border: 1.5px solid var(--white-alpha-40);
+    -webkit-backdrop-filter: var(--backdrop-filter-blur);
+    backdrop-filter: var(--backdrop-filter-blur);
   }
   .contactBanner__heading {
     font-size: 4rem;

@@ -30,7 +30,8 @@ const AboutPageStyles = styled.div`
     font-size: 2.2rem;
     margin-bottom: 2rem;
     span {
-      background-color: var(--deep-dark);
+      background-color: var(--white-alpha-25);
+      border: 1px solid var(--white-alpha-40);
       padding: 0.5rem;
       border-radius: 8px;
     }
@@ -65,6 +66,29 @@ const AboutPageStyles = styled.div`
   }
   .about__info__item {
     margin-bottom: 10rem;
+
+    .btn-link {
+      width: auto;
+      height: auto;
+      margin-top: 2rem;
+      display: inline-block;
+      font-family: 'RobotoMono Regular';
+      padding: 1rem 2rem;
+      font-size: 1.4rem;
+      color: #16bb92;
+      outline: none;
+      border-radius: 10px;
+      box-shadow: var(--outer-shadow);
+      -webkit-transition: all 0.3s ease;
+      transition: all 0.3s ease;
+
+      &:hover {
+        box-shadow: var(--inner-shadow);
+      }
+      &touch-action {
+        box-shadow: none;
+      }
+    }
   }
   .about__info__heading {
     font-size: 3.6rem;
@@ -244,26 +268,31 @@ export default function About() {
                 </a>
               </h3>
 
-              <a
-                href="https://www.freecodecamp.org/certification/ihsanmaulana141002/responsive-web-design"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <AboutInfoItem
-                  title="July 31, 2021"
-                  items={['Responsive Web Design']}
-                />
-              </a>
-              <a
-                href="https://www.freecodecamp.org/certification/ihsanmaulana141002/responsive-web-design"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <AboutInfoItem
-                  title="July 11, 2021"
-                  items={['Front End Development']}
-                />
-              </a>
+              <div className="flex">
+                <a
+                  className="btn-link"
+                  href="https://www.freecodecamp.org/certification/ihsanmaulana141002/responsive-web-design"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <AboutInfoItem
+                    title="July 31, 2021"
+                    items={['Responsive Web Design']}
+                  />
+                  See
+                </a>
+                <a
+                  className="btn-link"
+                  href="https://www.freecodecamp.org/certification/ihsanmaulana141002/front-end-development-libraries"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <AboutInfoItem
+                    title="July 11, 2021"
+                    items={['Front End Development']}
+                  />
+                </a>
+              </div>
               <br />
               <br />
               <br />
@@ -277,14 +306,16 @@ export default function About() {
                   sololearn.com
                 </a>
               </h3>
-
-              <a
-                href="https://www.sololearn.com/Certificate/1059-22757114/jpg/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <AboutInfoItem title="July 15,2021" items={['PHP Course ']} />
-              </a>
+              <div className="flex">
+                <a
+                  className="btn-link"
+                  href="https://www.sololearn.com/Certificate/1059-22757114/jpg/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <AboutInfoItem title="July 15,2021" items={['PHP Course ']} />
+                </a>
+              </div>
               <br />
               <br />
               <br />
@@ -298,57 +329,63 @@ export default function About() {
                   codepolitan.com
                 </a>
               </h3>
-
-              <a
-                href="https://www.codepolitan.com/c/NL6PDMF/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <AboutInfoItem
-                  title="June 20, 2021"
-                  items={['Basic HTML and CSS ']}
-                />
-              </a>
-              <a
-                href="https://www.codepolitan.com/c/DNGJ6CN"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <AboutInfoItem
-                  title="June 23, 2021"
-                  items={['Basic JavaScript']}
-                />
-              </a>
-              <a
-                href="https://www.codepolitan.com/c/B48XWLT"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <AboutInfoItem
-                  title="June 24, 2021"
-                  items={['Basic JQuery ']}
-                />
-              </a>
-              <a
-                href="https://www.codepolitan.com/c/3B8RITH"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <AboutInfoItem
-                  title="August 14, 2021"
-                  items={['Learn JavaScript Async']}
-                />
-              </a>
-              <a
-                href="https://www.codepolitan.com/c/QDGQ5SL"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <AboutInfoItem
-                  title="August 3, 2021"
-                  items={['Learn GIT beginners']}
-                />
-              </a>
+              <div className="flex">
+                <a
+                  className="btn-link"
+                  href="https://www.codepolitan.com/c/NL6PDMF/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <AboutInfoItem
+                    title="June 20, 2021"
+                    items={['Basic HTML and CSS ']}
+                  />
+                </a>
+                <a
+                  className="btn-link"
+                  href="https://www.codepolitan.com/c/DNGJ6CN"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <AboutInfoItem
+                    title="June 23, 2021"
+                    items={['Basic JavaScript']}
+                  />
+                </a>
+                <a
+                  className="btn-link"
+                  href="https://www.codepolitan.com/c/B48XWLT"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <AboutInfoItem
+                    title="June 24, 2021"
+                    items={['Basic JQuery ']}
+                  />
+                </a>
+                <a
+                  className="btn-link"
+                  href="https://www.codepolitan.com/c/3B8RITH"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <AboutInfoItem
+                    title="August 14, 2021"
+                    items={['Learn JavaScript Async']}
+                  />
+                </a>
+                <a
+                  className="btn-link"
+                  href="https://www.codepolitan.com/c/QDGQ5SL"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <AboutInfoItem
+                    title="August 3, 2021"
+                    items={['Learn GIT beginners']}
+                  />
+                </a>
+              </div>
             </div>
           </div>
         </div>

@@ -1,7 +1,6 @@
 import React from 'react';
 import emailjs from 'emailjs-com';
 import styled from 'styled-components';
-// eslint-disable-next-line import/no-extraneous-dependencies
 
 const FormStyle = styled.form`
   width: 100%;
@@ -17,8 +16,9 @@ const FormStyle = styled.form`
     width: 100%;
     font-size: 2rem;
     padding: 1.2rem;
-    color: var(--gray-1);
-    background-color: var(--deep-dark);
+    background-color: var(--white-alpha-25);
+    backdrop-filter: var(--backdrop-filter-blur);
+    border: 1.5px solid var(--white-alpha-40);
     outline: none;
     border: none;
     border-radius: 8px;
@@ -29,15 +29,28 @@ const FormStyle = styled.form`
     resize: vertical;
   }
   button[type='submit'] {
-    background-color: var(--gray-1);
-    color: var(--black);
-    font-size: 2rem;
+    width: auto;
+    height: auto;
+    margin-top: 2rem;
+
     display: inline-block;
+    padding: 1rem 2rem;
+    font-size: 1.4rem;
+    color: #16bb92;
     outline: none;
+    border-radius: 10px;
+    background-color: var(--white-alpha-25);
     border: none;
-    padding: 1rem 4rem;
-    border-radius: 8px;
-    cursor: pointer;
+    box-shadow: var(--outer-shadow);
+    transition: all 0.3s ease;
+
+    &:hover {
+      color: var(--gary-1);
+      /* background: linear-gradient(45deg, #16bb92, #1f7c91); */
+      box-shadow: var(--inner-shadow);
+      transition: all 0.4s ease;
+      cursor: pointer;
+    }
   }
 `;
 

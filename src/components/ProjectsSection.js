@@ -26,14 +26,19 @@ const ProjectSectionStyle = styled.div`
     position: absolute;
     height: 50px;
     width: 50px;
-    background: var(--deep-dark);
+    /* background: var(--deep-dark); */
     z-index: 10;
     right: 60px;
     left: auto;
     top: 0;
     transform: translateY(50%);
-    color: var(--gray-1);
+    color: var(--blue-light);
     border-radius: 8px;
+    /* glass */
+    background-color: var(--white-alpha-25);
+    border: 1.5px solid var(--white-alpha-40);
+    -webkit-backdrop-filter: var(--backdrop-filter-blur);
+    backdrop-filter: var(--backdrop-filter-blur);
   }
   .swiper-button-next {
     right: 0;
