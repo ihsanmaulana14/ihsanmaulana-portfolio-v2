@@ -99,7 +99,6 @@ const AboutPageStyles = styled.div`
     /* text-transform: uppercase; */
 
     a {
-      font-family: 'Montserrat SemiBold';
       margin-left: 1rem;
 
       &:hover {
