@@ -278,7 +278,6 @@ export default function About() {
                     title="July 31, 2021"
                     items={['Responsive Web Design']}
                   />
-                  See
                 </a>
                 <a
                   className="btn-link"
