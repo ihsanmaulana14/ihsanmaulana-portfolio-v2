@@ -25,7 +25,7 @@ const projects = [
     id: uuidv4(),
     name: 'Random Quote Machine - freecodecamp',
     desc:
-      'Using this app you can track any e coin. Also you will get a good advise about investment form the professional',
+      'This is a web aplication to see recommendations of quotes and you can post these quotes if you want.',
     img: randomQuoteMachineImg,
     projectLink:
       'https://ihsanmaulana14.github.io/a_bootstrap_random_quote_machine/',
@@ -34,7 +34,7 @@ const projects = [
     id: uuidv4(),
     name: 'JavaScrpipt Calculator - freecodecamp',
     desc:
-      'A portfolio for Cavin jr. A artist from New york city. The portfolio is made using ReactJs and GatsbyJs.',
+      'This is a web application for calculating arithmetic wherever you are.',
     img: jsCalculatorImg,
     projectLink: 'https://ihsanmaulana14.github.io/a_js_calculator/',
   },
@@ -42,7 +42,7 @@ const projects = [
     id: uuidv4(),
     name: '25 + 5 Clock App - freecodecamp',
     desc:
-      'A tracking website that will show the performance of the website. Also you will get some useful advice to improve the performance.',
+      'This is a website to help you figure out how long it takes you to do something.',
     img: ClockAppImg,
     projectLink: 'https://ihsanmaulana14.github.io/a_25_5_clock/',
   },

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
 const SectionTitleStyle = styled.div`
   text-align: center;
@@ -28,10 +29,28 @@ export default function SectionTitle({
   subheading = 'Need Subheading',
   heading = 'need heading',
 }) {
+  const fadeLeft = {
+    hidden: { opacity: 0, x: -100 },
+    visible: { opacity: 1, x: 0 },
+  };
   return (
     <SectionTitleStyle className="section-title">
-      <p>{subheading}</p>
-      <h2>{heading}</h2>
+      <motion.p
+        variants={fadeLeft}
+        initial="hidden"
+        animate="visible"
+        transition={{ duration: 1 }}
+      >
+        {subheading}
+      </motion.p>
+      <motion.h2
+        variants={fadeLeft}
+        initial="hidden"
+        animate="visible"
+        transition={{ duration: 1.2 }}
+      >
+        {heading}
+      </motion.h2>
     </SectionTitleStyle>
   );
 }

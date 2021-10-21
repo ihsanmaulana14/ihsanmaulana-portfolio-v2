@@ -1,10 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import { FaLinkedin, FaInstagram, FaGithub, FaWhatsapp } from 'react-icons/fa';
 import PText from '../components/PText';
 import Button from '../components/Button';
 import AboutImg from '../assets/images/ihsan-photo-2.png';
 import AboutInfoItem from '../components/AboutInfoItem';
+import SectionTitle from '../components/SectionTitle';
+
 // import { motion } from 'framer-motion';
 // import ContactBanner from '../components/ContactBanner';
 
@@ -106,6 +109,63 @@ const AboutPageStyles = styled.div`
       }
     }
   }
+  .hero__social,
+  .hero__scrollDown {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    position: relative;
+    order: -2;
+  }
+  .hero__social {
+    left: 0px;
+  }
+  .hero__scrollDown {
+    right: 0px;
+  }
+
+  .hero__social__indicator,
+  .hero__scrollDown {
+    width: 50px;
+    text-align: center;
+    p {
+      font-size: 1.6rem;
+      transform: translateY(-70px) rotate(90deg);
+      letter-spacing: 0.7rem;
+      text-transform: uppercase;
+    }
+    img {
+      max-height: 45px;
+      width: 16px;
+      margin: 0 auto;
+      object-fit: contain;
+    }
+  }
+  .hero__scrollDown {
+    img {
+      max-height: 70px;
+    }
+  }
+
+  .hero__social__text {
+    display: flex;
+    justify-content: center;
+    ul {
+      li {
+        margin: 1rem 0 1rem 0;
+        a {
+          display: inline-block;
+          font-size: 2.6rem;
+          letter-spacing: 5px;
+          transition: transform 0.2s;
+
+          &:hover {
+            transform: scale(1.2);
+          }
+        }
+      }
+    }
+  }
   @media only screen and (max-width: 768px) {
     padding: 10rem 0;
     .top-section {
@@ -124,6 +184,30 @@ const AboutPageStyles = styled.div`
     .about__info__heading3 {
       font-size: 2rem;
     }
+    .hero__social {
+      width: 100%;
+      left: 0px;
+      order: -1;
+      .hero__social__indicator {
+        p {
+          font-size: 1.4rem;
+        }
+        img {
+          max-height: 22px;
+        }
+      }
+      .hero__social__text {
+        ul {
+          display: flex;
+          gap: 2rem;
+          li {
+            margin: 0 1rem 0 1rem;
+            a {
+            }
+          }
+        }
+      }
+    }
   }
 `;
 
@@ -136,6 +220,10 @@ export default function About() {
     <>
       <AboutPageStyles>
         <div className="container">
+          <SectionTitle
+            subheading="Let me introduce myself"
+            heading="About Me"
+          />
           <div className="top-section">
             <motion.div
               className="left"
@@ -160,7 +248,7 @@ export default function About() {
                 animate="visible"
                 transition={{ duration: 1.4 }}
               >
-                A front-end developer
+                front-end developer
               </motion.h2>
               <div className="about__info">
                 <PText>
@@ -182,6 +270,59 @@ export default function About() {
               transition={{ duration: 0.8 }}
             >
               <img src={AboutImg} alt="me" />
+            </motion.div>
+            {/* Hero SOCIAL */}
+            <motion.div
+              className="hero__social"
+              variants={fadeLeft}
+              initial="hidden"
+              animate="visible"
+              transition={{ duration: 1.1 }}
+            >
+              {/* <div className="hero__social__indicator">
+            <p>Social</p>
+            <img src={SocialMediaArrow} alt="icon" />
+          </div> */}
+              <div className="hero__social__text">
+                <ul>
+                  <li>
+                    <a
+                      href="https://github.com/ihsanmaulana14"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <FaGithub />
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.linkedin.com/in/ihsanmaulana14/"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <FaLinkedin />
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="http://isntagram.com/san.m_tech"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <FaInstagram />
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://wa.me/6281318590716"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <FaWhatsapp />
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </motion.div>
           </div>
           <div className="about__info__items">

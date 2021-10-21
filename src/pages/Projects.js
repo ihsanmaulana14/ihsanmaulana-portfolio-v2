@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { MdSearch } from 'react-icons/md';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import SectionTitle from '../components/SectionTitle';
 import ProjectsInfo from '../assets/data/projects';
 // import ProjectItem from '../components/ProjectItem';
@@ -123,6 +124,11 @@ export default function Projects() {
       setProjectsData(ProjectsInfo);
     }
   };
+
+  const fadeLeft = {
+    hidden: { opacity: 0, x: -100 },
+    visible: { opacity: 1, x: 0 },
+  };
   return (
     <>
       <ProjectStyle>
@@ -131,7 +137,13 @@ export default function Projects() {
             heading="Projects"
             subheading="some of my recent works"
           />
-          <div className="projects__searchBar">
+          <motion.div
+            className="projects__searchBar"
+            variants={fadeLeft}
+            initial="hidden"
+            animate="visible"
+            transition={{ duration: 1.4 }}
+          >
             <form>
               <input
                 type="text"
@@ -141,8 +153,14 @@ export default function Projects() {
               />
               <MdSearch className="searchIcon" />
             </form>
-          </div>
-          <div className="projects__allItems">
+          </motion.div>
+          <motion.div
+            className="projects__allItems"
+            variants={fadeLeft}
+            initial="hidden"
+            animate="visible"
+            transition={{ duration: 1, delay: 1 }}
+          >
             {projectsData.map((item) => (
               <>
                 <div className="project__item">
@@ -167,7 +185,7 @@ export default function Projects() {
                 </div>
               </>
             ))}
-          </div>
+          </motion.div>
         </div>
       </ProjectStyle>
     </>

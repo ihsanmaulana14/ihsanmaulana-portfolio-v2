@@ -1,6 +1,7 @@
 import React from 'react';
 import emailjs from 'emailjs-com';
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
 const FormStyle = styled.form`
   width: 100%;
@@ -60,6 +61,10 @@ export default function ContactForm() {
   // const [message, setMessage] = useState('');
   // const [subject, setSubject] = useState('');
   // const form = useRef();
+  const fadeLeft = {
+    hidden: { opacity: 0, x: -100 },
+    visible: { opacity: 1, x: 0 },
+  };
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -84,7 +89,13 @@ export default function ContactForm() {
   return (
     <>
       <FormStyle onSubmit={sendEmail}>
-        <div className="form-group">
+        <motion.div
+          className="form-group"
+          variants={fadeLeft}
+          initial="hidden"
+          animate="visible"
+          transition={{ duration: 1 }}
+        >
           <label htmlFor="name">
             Your Name
             <input
@@ -95,8 +106,14 @@ export default function ContactForm() {
               // onChange={(e) => setName(e.target.value)}
             />
           </label>
-        </div>
-        <div className="form-group">
+        </motion.div>
+        <motion.div
+          className="form-group"
+          variants={fadeLeft}
+          initial="hidden"
+          animate="visible"
+          transition={{ duration: 1.2 }}
+        >
           <label htmlFor="email">
             Your Email
             <input
@@ -107,8 +124,14 @@ export default function ContactForm() {
               // onChange={(e) => setEmail(e.target.value)}
             />
           </label>
-        </div>
-        <div className="form-group">
+        </motion.div>
+        <motion.div
+          className="form-group"
+          variants={fadeLeft}
+          initial="hidden"
+          animate="visible"
+          transition={{ duration: 1.4 }}
+        >
           <label htmlFor="subject">
             Your subject
             <input
@@ -119,8 +142,14 @@ export default function ContactForm() {
               // onChange={(e) => setSubject(e.target.value)}
             />
           </label>
-        </div>
-        <div className="form-group">
+        </motion.div>
+        <motion.div
+          className="form-group"
+          variants={fadeLeft}
+          initial="hidden"
+          animate="visible"
+          transition={{ duration: 1.6 }}
+        >
           <label htmlFor="message">
             Your message
             <textarea
@@ -131,10 +160,17 @@ export default function ContactForm() {
               // onChange={(e) => setMessage(e.target.value)}
             />
           </label>
-        </div>
-        <button type="submit" value="send">
+        </motion.div>
+        <motion.button
+          type="submit"
+          value="send"
+          variants={fadeLeft}
+          initial="hidden"
+          animate="visible"
+          transition={{ duration: 1.4 }}
+        >
           Send
-        </button>
+        </motion.button>
       </FormStyle>
     </>
   );

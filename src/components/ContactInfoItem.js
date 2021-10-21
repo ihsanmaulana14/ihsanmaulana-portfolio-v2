@@ -1,9 +1,10 @@
 import React from 'react';
 import { MdPlace } from 'react-icons/md';
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 import PText from './PText';
 
-const ItemStyles = styled.div`
+const ItemStyles = styled(motion.div)`
   padding: 2rem;
   background-color: var(--white-alpha-25);
   backdrop-filter: var(--backdrop-filter-blur);
@@ -34,9 +35,18 @@ export default function ContactInfoItem({
   text = 'I need text ',
   link = 'it is link',
 }) {
+  const fadeLeft = {
+    hidden: { opacity: 0, x: -100 },
+    visible: { opacity: 1, x: 0 },
+  };
   return (
     <a href={link} alt="linkcontact" target="_blank" rel="noreferrer">
-      <ItemStyles>
+      <ItemStyles
+        variants={fadeLeft}
+        initial="hidden"
+        animate="visible"
+        transition={{ duration: 1.4 }}
+      >
         <div className="icon">{icon}</div>
         <div className="info">
           <PText>{text}</PText>
