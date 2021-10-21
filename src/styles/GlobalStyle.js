@@ -49,8 +49,7 @@ const GlobalStyles = createGlobalStyle`
   body{
     /* background-color: var(---font-color-1); */
     min-height: 100vh;
-    /* background-image: linear-gradient(to bottom right, var(--pink-light),var(--cyan-light)); */
-    background-image: url(${bigSur});
+    background-image: linear-gradient(to bottom right, var(--pink-light),var(--cyan-light));
     color: var(--blue-dark);
     line-height: 1.5;
     overflow-x: hidden;
