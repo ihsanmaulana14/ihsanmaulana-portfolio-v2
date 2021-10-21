@@ -1,5 +1,4 @@
 import { createGlobalStyle } from 'styled-components';
-import bigSur from '../assets/images/bigsur.jpg';
 
 const GlobalStyles = createGlobalStyle`
 *{
