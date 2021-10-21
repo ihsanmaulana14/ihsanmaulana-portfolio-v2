@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+// import bigSur from '../assets/images/bigsur.jpg';
 
 const GlobalStyles = createGlobalStyle`
 *{
@@ -49,6 +50,7 @@ const GlobalStyles = createGlobalStyle`
     /* background-color: var(---font-color-1); */
     min-height: 100vh;
     background-image: linear-gradient(to bottom right, var(--pink-light),var(--cyan-light));
+    background-image: url("../assets/images/bigsur.jpg");
     color: var(--blue-dark);
     line-height: 1.5;
     overflow-x: hidden;
