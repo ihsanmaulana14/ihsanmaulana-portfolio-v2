@@ -1,4 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
+import portfolioImg from '../images/projects/ihsan-portfolio.jpg';
 import drumMachineImg from '../images/projects/project-drum-machine.JPG';
 import markdownPreviewerImg from '../images/projects/project-markdown-previewer.JPG';
 import randomQuoteMachineImg from '../images/projects/project-random-quote-machine.JPG';
@@ -6,6 +7,14 @@ import jsCalculatorImg from '../images/projects/project-javascript-calculator.JP
 import ClockAppImg from '../images/projects/project-25+5clock-app.JPG';
 
 const projects = [
+  {
+    id: uuidv4(),
+    name: 'Ihsan Maulana Portfolio website',
+    desc:
+      'This is my personal website portfolio , create with html, css, and react js.',
+    img: portfolioImg,
+    projectLink: 'https://ihsanmaulana-portfolio.netlify.app',
+  },
   {
     id: uuidv4(),
     name: 'drum machine - freecodecamp',
